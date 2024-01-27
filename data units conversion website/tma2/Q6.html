@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckPassword</title>
+</head>
+<body>
+    <label for="password">Password :</label><br> <br>
+    <input type="password" id="password"  placeholder="Enter your password" onblur="CheckPassword(this.value)" ><br><br>
+    <script >
+        function CheckPassword(inputpass){
+        var passw=  /^.{4,8}$/;
+        if(inputpass.match(passw)) { 
+            alert('Correct Password...');
+            return true;
+        }
+        else{ 
+           alert('Wrong...!  password is less than 4 characters or greater than 8 characters');
+            return false;
+        }
+        }
+    </script>
+</body>
+</html>
