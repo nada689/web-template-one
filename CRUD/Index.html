@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>CRUD</title>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="form-group py-2">
+            <label>product name:</label>
+            <input type="text" class="form-control" id="productNameInput">
+        </div>
+        <div class="form-group py-2">
+            <label>product price:</label>
+            <input type="number" class="form-control" id="productPriceInput">
+        </div>
+        <div class="form-group py-2">
+            <label>product category:</label>
+            <input type="text" class="form-control" id="productCategoryInput">
+        </div>
+        <div class="form-group py-2">
+            <label>product description:</label>
+            <textarea type="text" class="form-control" id="productDescriptionInput"></textarea>
+        </div>
+        <button onclick=" addProduct() " class="btn btn-info  py-2" id="Add Product"> Add Product</button>
+    </div>
+   
+    <div class="container py-5">
+        <input type="text" placeholder="Search....." class="form-control w-50 m-auto my-3" id="search" onkeyup="searchProduct() ">
+        <table class="table text-center">
+            <thead>
+                <th>Index</th>
+                <th>product name</th>
+                <th>product price</th>
+                <th>product category</th>
+                <th>product description</th>
+                <th>Update</th>
+                <th>Deleta</th>
+
+            </thead>
+            <tbody id="tableProduct">
+                
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <script src="bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js"></script> 
+    <script src="bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\js\bootstrap.min.js"></script>
+    <script src="java.js"></script>
+</body>    
+</html>
