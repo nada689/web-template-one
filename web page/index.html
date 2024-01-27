@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موارد</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app="">
+    <div class="body"><div class="header">
+        <p class="left"><span class="lefts">&#10132;</span></p>
+        <p class="t">اضافة موارد جديدة</p>
+        <div class=" form-switch" style="position: absolute;top: 130.81px;left: 450.09px;">
+            <label class="form-check-label" for="flexSwitchCheckChecked">مفعلة</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+        </div>
+        <button type="button" class="btn btn-dark" id="save">حفظ التغييرات</button>
+        <button type="button" class="fa btn btn-outline-danger" id="delete">حذف المورد &#xf014;</button>
+    </div>
+    <div class="info">
+        <input type='file' class="avatar1" accept="image/*"  >
+        <br><img  alt="Avatar" class="avatar" id="myImg" src="#">
+        <p id="mwared">اسم المورد</p>
+        <input type="text" value="هيثم محمد" id="name">
+    </div>
+    <div class="type">
+        <p id="type">اختر نوع الموارد</p>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" >
+            <label class="form-check-label" for="inlineRadio2"><p id="op2"><span id="day">( أكثر من يوم) </span>حجز مدة </p></label>
+          </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+            <label class="form-check-label" for="inlineRadio1"><p id="op1">حجز خلال اليوم</p></label>
+          </div>
+          
+    </div>
+    <div class="count">
+        <p id="av">المورد متاح إلى</p>
+        <input type="number" id="num" ><select class="form-select" aria-label="Disabled select example" id="select" >
+            <option selected> select </option>
+            <option value="1">شهر</option>
+            <option value="2">سنة</option>
+            <option value="3">أسبوع</option>
+          </select>
+          <div class="time">
+            <p id="time">وقت المورد</p>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio3" value="option3" ng-model="myVar"  checked >
+                <label class="form-check-label" for="inlineRadio3"> <p id="op4"> الوقت ثابت </p></label> <span>&#128338;</span>
+            </div>
+
+          <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio4" value="option4" >
+              <label class="form-check-label" for="inlineRadio4"><p id="op3"> وقت الخدمة</p> </label> <span> &#9634; </span>
+            </div>
+            <div class="container1"ng-show="myVar">
+                <div class="counter1">
+                    <button id="increment-btn1">+</button>
+                    <p id="counter-value1"> 0</p><span>دقيقة</span>
+                    <button id="decrement-btn1">-</button>
+                </div>
+            </div>
+            <div class="container2" ng-show="myVar2">
+                <div class="counter2">
+                    <button id="increment-btn2">^</button>
+                    <button id="decrement-btn2">^</button>
+                    <p id="counter-value2"> 0</p><span>موعد</span>
+                </div>
+            </div>
+
+            <p id="count"><span id="infoSy" data-bs-toggle="tooltip" data-bs-placement="left" title="هذة خاصية تتيح لك الحجز بأكثر من طريقة"> &#128712;</span> الحجز المتعدد</p>
+            <div class="form-check form-check-inline" id="op5">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio5" value="option5" checked ng-model="myVar2"  >
+                <label class="form-check-label" for="inlineRadio5"> <p > حجز اكثر من شخص لنفس الموعد</p> </label> <span> &#129492;&#128113; </span>
+            </div>
+          <div class="form-check form-check-inline" id="op6">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio6" value="option6">
+              <label class="form-check-label" for="inlineRadio6"><p > حجز واحد فقط </p></label> <span>&#128113;</span>
+            </div>
+          </div>
+    </div>
+    <div class="book">
+        <p id="title">حدد مواعيد العمل للمورد</p>
+        <p id="subtitle">.تكوين إعدادات الأسبوع الخاص بك هنا. ما عليك سوى تحريك أشرطة التمرير وإضافة / إزالة أوقات الراحة لإعداد ساعات العمل</p>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1">إعدادات تقليدية</label>
+          
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">إعدادات متقدمة </label>
+          </div>
+        <div class=" form-switch">
+            <label class="form-check-label" for="flexSwitchCheckChecked1">السبت</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked1" ng-model="myVar3" >
+            <div class="check" ng-show="myVar3">
+                <p id="start">وقت البدء</p>
+                <p id="end">وقت الإنتهاء</p>
+                <input type="time" name="time" class="inputtime"><span> -- </span> <input type="time" name="time" class="inputtime">
+                <button id="add" >+</button>
+                <button id="copy">&#10064;</button>
+            </div>
+            
+        </div>
+        <div class=" form-switch">
+            <label class="form-check-label" for="flexSwitchCheckChecked2">الأحد</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked2" ng-model="two">
+            <div class="check" id="r" ng-show="two">
+                <p id="start">وقت البدء</p>
+                <p id="end">وقت الإنتهاء</p>
+                <input type="time" name="time" class="inputtime"><span> -- </span> <input type="time" name="time" class="inputtime">
+                <button id="add" ng-click="myVar7='my-class'">+</button>
+                <button id="copy">&#10064;</button>
+            </div>
+            <div class="check"ng-if="myVar7" ng-show="two" >
+                <p id="start">وقت البدء</p>
+                <p id="end">وقت الإنتهاء</p>
+                <input type="time" name="time" class="inputtime"><span> -- </span> <input type="time" name="time" class="inputtime">
+                <button id="remove" ng-model="myVar7" ng-click="myVar9='my-class'" onclick="myFunction()">-</button>
+                <button id="copy">&#10064;</button>
+            </div>
+            
+            <div class="check"ng-if="myVar7" ng-show="two">
+                <p id="start">وقت البدء</p>
+                <p id="end">وقت الإنتهاء</p>
+                <input type="time" name="time" class="inputtime"><span> -- </span> <input type="time" name="time" class="inputtime">
+                <button id="remove" ng-model="myVar7" ng-click="myvar7">-</button>
+                <button id="copy">&#10064;</button>
+            </div>
+        </div>
+        <div class=" form-switch">
+            <label class="form-check-label" for="flexSwitchCheckChecked3">الاثنين</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecke3"ng-model="tree" >
+            <div class="check"ng-show="tree">
+                <p id="start">وقت البدء</p>
+                <p id="end">وقت الإنتهاء</p>
+                <input type="time" name="time" class="inputtime"><span> -- </span> <input type="time" name="time" class="inputtime">
+                <button id="add">+</button>
+                <button id="copy">&#10064;</button>
+            </div>
+        </div>
+        <div class=" form-switch">
+            <label class="form-check-label" for="flexSwitchCheckChecked4">الثلاثاء</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked4" ng-model="four">
+            <div class="check" ng-show="four">
+                <p id="start">وقت البدء</p>
+                <p id="end">وقت الإنتهاء</p>
+                <input type="time" name="time" class="inputtime"><span> -- </span> <input type="time" name="time" class="inputtime">
+                <button id="add">+</button>
+                <button id="copy">&#10064;</button>
+            </div>
+        </div>
+        <div class=" form-switch">
+            <label class="form-check-label" for="flexSwitchCheckChecked5">الأربعاء</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked5" ng-model="five">
+            <div class="check" ng-show="five">
+                <p id="start">وقت البدء</p>
+                <p id="end">وقت الإنتهاء</p>
+                <input type="time" name="time" class="inputtime"><span> -- </span> <input type="time" name="time" class="inputtime">
+                <button id="add">+</button>
+                <button id="copy">&#10064;</button>
+            </div>
+        </div>
+        <div class=" form-switch">
+            <label class="form-check-label" for="flexSwitchCheckChecked6">الخميس</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked6"ng-model="seven" >
+            <div class="check" ng-show="seven">
+                <p id="start">وقت البدء</p>
+                <p id="end">وقت الإنتهاء</p>
+                <input type="time" name="time" class="inputtime"><span> -- </span> <input type="time" name="time" class="inputtime">
+                <button id="add">+</button>
+                <button id="copy">&#10064;</button>
+            </div>
+        </div>
+        <div class=" form-switch">
+            <label class="form-check-label" for="flexSwitchCheckChecked7">الجمعة</label>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked7" ng-model="myVar4" >
+            <div class="check" ng-show="myVar4" >
+                <p id="start">وقت البدء</p>
+                <p id="end">وقت الإنتهاء</p>
+                <input type="time" name="time" class="inputtime"><span> -- </span> <input type="time" name="time" class="inputtime">
+                <button id="add">+</button>
+                <button id="copy">&#10064;</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script src="bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js"></script> 
+    <script src="bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\js\bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+    <script src="java.js"></script>
+</body>
+</html>
